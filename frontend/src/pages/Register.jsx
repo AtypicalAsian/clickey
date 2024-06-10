@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Register = () => {
   return (
@@ -35,7 +36,7 @@ const Register = () => {
           <button
             // onClick={handleLogin}
             className="w-full px-4 py-2 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black "
-            style={{ backgroundColor: "#365E32" }}
+            style={{ backgroundColor: "#26355D" }}
           >
             Sign up
           </button>
@@ -47,6 +48,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

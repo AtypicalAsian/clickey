@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Login = () => {
   return (
@@ -29,7 +30,8 @@ const Login = () => {
           <button
             // onClick={handleLogin}
             className="w-full px-4 py-2 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black "
-            style={{ backgroundColor: "#365E32" }}
+            // style={{ backgroundColor: "#365E32" }}
+            style={{ backgroundColor: "#26355D" }}
           >
             Sign in
           </button>
@@ -41,6 +43,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
