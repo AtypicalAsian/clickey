@@ -4,9 +4,10 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const verifyToken = require("../verifyToken");
 
 //Create new post
-router.post("/create", async (req, res) => {
+router.post("/create", verifyToken, async (req, res) => {
   try {
     const newPost = new Post(req.body);
     // console.log(req.body)
@@ -19,7 +20,7 @@ router.post("/create", async (req, res) => {
 });
 
 //Update existing posts
-router.put("/:id", async (req, res) => {
+router.put("/:id", verifyToken, async (req, res) => {
   try {
     const updatedPost = await Post.findByIdAndUpdate(
       req.params.id,
@@ -33,7 +34,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //Delete existing post
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", verifyToken, async (req, res) => {
   try {
     await Post.findByIdAndDelete(req.params.id);
     await Comment.deleteMany({ postId: req.params.id });
@@ -55,8 +56,12 @@ router.get("/:id", async (req, res) => {
 
 //Get all posts
 router.get("/", async (req, res) => {
+  const query = req.query;
   try {
-    const posts = await Post.find();
+    const searchFilter = {
+      title: { $regex: query.search, $options: "i" },
+    };
+    const posts = await Post.find(query.search ? searchFilter : null);
     res.status(200).json(posts);
   } catch (error) {}
 });
@@ -70,7 +75,5 @@ router.get("/user/:userId", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-//Search Posts
 
 module.exports = router;
