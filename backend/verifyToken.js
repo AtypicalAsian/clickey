@@ -9,7 +9,7 @@ const verifyToken = (req, res, next) => {
     if (err) {
       return res.status(403).json("Invalid Token!");
     }
-    req.userId = data.id;
+    req.userId = data._id;
     console.log("token verified!");
     next();
   });
