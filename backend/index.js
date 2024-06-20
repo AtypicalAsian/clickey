@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const path = require("path");
 const multer = require("multer");
 const CookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
@@ -21,11 +22,12 @@ const connectDB = async () => {
   }
 };
 
-//middlewars
+//middlewares
 dotenv.config();
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(cookieParser());
+app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
@@ -43,6 +45,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
+  console.log(req.body);
   res.status(200).json("Image uploaded successfully!");
 });
 
