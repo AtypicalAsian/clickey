@@ -47,6 +47,7 @@ const CreatePost = () => {
       post.photo = filename;
 
       try {
+        // eslint-disable-next-line no-unused-vars
         const img_up = await axios.post(URL + "/api/upload", data);
         // console.log(img_up.data);
       } catch (error) {

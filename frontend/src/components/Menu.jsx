@@ -2,17 +2,21 @@ import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import axios from "axios";
 import { URL } from "../url";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const { user } = useContext(UserContext);
   const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
   const handleLogout = async () => {
     try {
+      // eslint-disable-next-line no-unused-vars
       const res = await axios.get(URL + "/api/auth/logout", {
         withCredentials: true,
       });
-      console.log(res);
+      // console.log(res);
       setUser(null);
+      navigate("/login");
     } catch (error) {
       console.log(error);
     }

@@ -16,6 +16,8 @@ const PostDetails = () => {
   const [post, setPost] = useState({});
   const { user } = useContext(UserContext);
   const [loader, setLoader] = useState(false);
+  const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState("");
   const fetchPost = async () => {
     setLoader(true);
     try {
@@ -44,6 +46,46 @@ const PostDetails = () => {
   useEffect(() => {
     fetchPost();
   }, [postId]);
+
+  const fetchPostComments = async () => {
+    setLoader(true);
+    try {
+      const res = await axios.get(URL + "/api/comments/post/" + postId);
+      setComments(res.data);
+      setLoader(false);
+    } catch (err) {
+      setLoader(true);
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchPostComments();
+  }, [postId]);
+
+  const postComment = async (e) => {
+    e.preventDefault();
+    try {
+      // eslint-disable-next-line no-unused-vars
+      const res = await axios.post(
+        URL + "/api/comments/create",
+        {
+          comment: comment,
+          author: user.username,
+          postId: postId,
+          userId: user._id,
+        },
+        { withCredentials: true }
+      );
+
+      // fetchPostComments()
+      // setComment("")
+      window.location.reload(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -97,17 +139,20 @@ const PostDetails = () => {
           <div className="flex flex-col mt-4">
             <h3 className="mt-6 mb-4 font-semibold">Comments:</h3>
             {/* Comments Section */}
-            <Comment />
-            <Comment />
+            {comments?.map((c) => (
+              <Comment key={c._id} c={c} post={post} />
+            ))}
           </div>
           {/* Add a comment */}
           <div className="w-full flex flex-col mt-4 md:flex-row">
             <input
+              onChange={(e) => setComment(e.target.value)}
               className="md:w-[80%] outline-none px-4 mt-4 md:mt-0"
               type="text"
               placeholder="Add a comment"
             />
             <button
+              onClick={postComment}
               className="text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0"
               style={{ backgroundColor: "#26355D" }}
             >
