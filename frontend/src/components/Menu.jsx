@@ -2,7 +2,7 @@ import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import axios from "axios";
 import { URL } from "../url";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Menu = () => {
   const { user } = useContext(UserContext);
@@ -25,27 +25,27 @@ const Menu = () => {
     <div className="bg-black w-[200px] z-10 flex flex-col items-start absolute top-12 right-6 md:right-32 rounded-md p-4 space-y-4">
       {!user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          Login
+          <Link to="/login">Login</Link>
         </h3>
       )}
       {!user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          Register
+          <Link to="/register">Register</Link>
         </h3>
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          My Profile
+          <Link to={"/profile/" + user._id}>My Profile</Link>
         </h3>
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          Create
+          <Link to="/write">Create</Link>
         </h3>
       )}
       {user && (
         <h3 className="text-white text-sm hover:text-gray-500 cursor-pointer">
-          My Reviews
+          <Link to={"/myreviews/" + user._id}>My Reviews</Link>
         </h3>
       )}
       {user && (
