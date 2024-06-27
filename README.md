@@ -6,7 +6,7 @@
 
 
 ## ℹ️ Introduction
-Clickey is a full-stack web application designed to connect keyboard enthusiasts, enabling them to share and review keyboards. Developed using the MERN stack, it supports full CRUD operations and aims to create a community for college students to discover and discuss their favorite keyboards.
+Clickey is a full-stack web application created with the MERN stack, designed to facilitate connections among keyboard enthusiasts. Clickey supports full CRUD operations and strives to cultivate a welcoming community where college students can share and discuss their favorite keyboards.
 
 ## 🚀 Features
 1. `User Profiles`: Users can create personal profiles and have posts grouped by their user ID. On the backend, user credentials are housed in a MongoDB database. On the front end, useContext hook is used to maintain information about the current user logged into the application, ensuring that the user state is globally accessible and can be updated across different components. The integration between the front-end and back-end is facilitated by a REST API developed using Express.js. 
