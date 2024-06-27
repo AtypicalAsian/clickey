@@ -17,6 +17,44 @@ Clickey is a full-stack web application designed to connect keyboard enthusiasts
 - Authentication: JWT (JSON Web Tokens), bcrypt
 
 ## Installation
+**Clone the repository:**
+```bash
+$ git clone https://github.com/AtypicalAsian/clickey.git
+```
+
+**Navigate to project directory:**
+```bash
+$ cd clickey
+```
+
+**Install backend dependencies:**
+```bash
+$ cd backend
+npm install
+```
+
+**Install frontend dependencies:**
+```bash
+$ cd ../frontend
+npm install
+```
+
+**Set up environment variables:**
+
+- Create a .env file in the backend directory and add your MongoDB URI, JWT secret, and other necessary configurations.
+
+**Start up development server:**
+
+In the backend, execute
+```bash
+$ npm run start-dev
+```
+
+In the front-end, execute
+```bash
+$ npm run dev
+```
+
 
 ## Usage
 
