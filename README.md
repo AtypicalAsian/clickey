@@ -22,28 +22,28 @@ Clickey is a full-stack web application designed to connect keyboard enthusiasts
 $ git clone https://github.com/AtypicalAsian/clickey.git
 ```
 
-**Navigate to project directory:**
+**Navigate to project directory**
 ```bash
 $ cd clickey
 ```
 
-**Install backend dependencies:**
+**Install backend dependencies**
 ```bash
 $ cd backend
 npm install
 ```
 
-**Install frontend dependencies:**
+**Install frontend dependencies**
 ```bash
 $ cd ../frontend
 npm install
 ```
 
-**Set up environment variables:**
+**Set up environment variables**
 
 - Create a .env file in the backend directory and add your MongoDB URI, JWT secret, and other necessary configurations.
 
-**Start up development server:**
+**Start up development server**
 
 In the backend, execute
 ```bash
