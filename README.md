@@ -1,5 +1,11 @@
-## Introduction ⌨️
+## Table of Contents ⌨️
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
 
+
+## Introduction
 Clickey is a full-stack web application designed to connect keyboard enthusiasts, enabling them to share and review keyboards. Developed using the MERN stack, it supports full CRUD operations and aims to create a community for college students to discover and discuss their favorite keyboards.
 
 ## Features
