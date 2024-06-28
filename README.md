@@ -63,4 +63,10 @@ $ npm run dev
 
 
 ## 💭 Usage
+Here is how you can get started:
+
+**Account Creation**
+First, navigate to the Register button in the upper right corner of the nav bar. You will then be prompted to enter your username, email, and password. Upon successfully logging into the account, the application will redirect you to a login page. Re-enter your credentials to log in.
+
+
 
