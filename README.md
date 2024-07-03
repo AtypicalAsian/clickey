@@ -62,7 +62,7 @@ npm install
 
 **Set up environment variables**
 
-- Create a .env file similar to .env_example in the backend directory and add your MongoDB URI, JWT secret, and port=5000.
+- Create a .env file similar to [env_example.txt](https://github.com/AtypicalAsian/clickey/blob/main/backend/env_example.txt) file in the backend directory and add your MongoDB URI, JWT secret, and port=5000.
 
 **Start up development server**
 
