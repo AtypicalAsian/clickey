@@ -1,9 +1,10 @@
-## ⌨️ Table of Contents
+## Table of Contents
 
-1. [Introduction](#ℹ️-Introduction)
-2. [Features](#🚀-Features)
-3. [Installation and Project Setup](#⬇️-Installation-and-Project-Set-Up)
-4. [Usage](#💭-Usage)
+- [Introduction](#-introduction)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation and Project Set Up](#️-installation-and-project-set-up)
+- [Usage](#-usage)
 
 ## ℹ️ Introduction
 
@@ -81,6 +82,20 @@ $ npm run dev
 
 Here is how you can get started:
 
-**Account Creation**
+### Account Creation/Login
+
+https://github.com/AtypicalAsian/clickey/assets/68703714/acadca51-6792-4197-8930-61d22ab2a621
 
 First, navigate to the Register button in the upper right corner of the nav bar. You will then be prompted to enter your username, email, and password. Upon successfully logging into the account, the application will redirect you to a login page. Re-enter your credentials to log in.
+
+### Post Creation
+
+https://github.com/AtypicalAsian/clickey/assets/68703714/2fcd59a7-5272-4c12-b8d1-e6dbc8f4ca83
+
+To create a new post, click on the "Create Post" button located within your profile dashboard. You will be prompted to enter a title, content, and optionally, tags or categories to categorize your post. After completing the fields, click "Create" to publish your content to the platform.
+
+### Comment and Search Functionality
+
+https://github.com/AtypicalAsian/clickey/assets/68703714/2fef40a2-caef-4f0a-9ee5-172c33aa17fb
+
+Once logged in, navigate to any review posts. Scroll to the bottom of the content to find the comment section. Type your comment in the provided text box and click "Add Comment" to publish your comment. Additionally, you can edit or delete your comment after posting. To search for a specific post, utilize the search bar located at the top of the page to search for specific content, posts, users, or topics of interest. Enter relevant keywords or phrases and press enter or click the search icon. The application will generate a list of results matching your search criteria, organized by date.
