@@ -8,7 +8,7 @@
 
 ## ℹ️ Introduction
 
-Clickey is a full-stack web application created with the MERN stack, designed to facilitate connections and knowledge sharing among keyboard enthusiasts. Clickey supports full CRUD operations and strives to cultivate a welcoming community where college students can share and discuss their favorite keyboards.
+Clickey is a full-stack web application designed for keyboard enthusiasts to share reviews, interact through comments, and build connections with others in the keyboard community. Built using the MERN stack, the app supports full CRUD operations and aims to foster knowledge sharing and a sense of community among its users.
 
 ## 🚀 Features
 
